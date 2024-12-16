@@ -1,37 +1,77 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Finger+Paint&family=Raleway:wght@400;700&display=swap');
+
 /* General styles for the entire page */
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    color: #000; /* Set text color to black */
-    background-color: #fff; /* Set background to solid white */
+    color: #000000; /* Set text color to black */
+    background: linear-gradient(135deg, #4b4b4b 25%, #535353 25%, #535353 50%, #4b4b4b 50%, #4b4b4b 75%, #535353 75%);
+    background-size: 40px 40px; /* Controls the size of the stripes */
+    animation: move-stripes 6s linear infinite; /* Adds the animation */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    display: flex;
+    flex-direction: column; /* Makes the body a flex container */
+    min-height: 100vh; /* Ensures the body takes up the full height of the viewport */
+}
+
+/* Keyframes for moving the background */
+@keyframes move-stripes {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 40px 40px; /* Moves the stripes diagonally */
+    }
+}
+
+
+/* Smooth scrolling for anchor links */
+a {
+    text-decoration: none;
 }
 
 /* Container for main content */
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Allows the content to expand and fill the available space */
+}
+
 .container {
     width: 75%;
     margin: 20px auto;
     padding: 30px;
-    background: #f4f4f9; /* Light gray background for container */
+    flex: 1;
+    background: rgb(231,231,231);
+    background: linear-gradient(180deg, rgba(231,231,231,1) 0%, rgb(187, 187, 187) 50%, rgba(231,231,231,1) 100%);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     border: 1px solid #1f1f1f; /* Black border */
+    transition: transform 0.4s ease; /* Smooth hover animation */
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
 }
 
 /* Header styles */
 h1 {
     font-family: 'Finger Paint', cursive;
     font-size: 2.5rem;
-    color: #ff914d;
+    color: #ff914d; /* Fill color */
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
+
 h1 + p {
-    font-family: 'Finger Paint', cursive;
+    font-family: 'Raleway', sans-serif;
     font-weight: bold;
     font-size: 1.2rem;
     color: #4a3cc9; /* Add purple accent for tagline */
@@ -40,7 +80,7 @@ h1 + p {
 }
 
 h2, h3 {
-    font-family: 'Finger Paint', cursive;
+    font-family: 'Raleway', sans-serif;
     font-size: 1.8rem;
     color: #1f1f1f; /* Black for headings */
     margin-bottom: 15px;
@@ -62,6 +102,7 @@ blockquote {
     border-left: 6px solid #ff914d; /* Orange accent line */
     border-radius: 8px;
     color: #4a3cc9; /* Purple text */
+    font-family: 'Raleway', sans-serif;
 }
 
 blockquote p {
@@ -81,7 +122,6 @@ blockquote footer {
     margin-top: 10px;
 }
 
-
 /* Contact Info styling */
 .contact-info {
     list-style: none;
@@ -89,6 +129,7 @@ blockquote footer {
     line-height: 2;
     font-size: 1.1rem;
     color: #1f1f1f; /* Black text */
+    font-family: 'Raleway', sans-serif;
 }
 
 .contact-info li {
@@ -113,28 +154,159 @@ ul {
     font-size: 1rem;
     line-height: 1.7;
     color: #1f1f1f;
+    font-family: 'Raleway', sans-serif;
 }
 
 /* Footer styling */
 footer {
     text-align: center;
     padding: 25px;
-    margin-top: 30px;
     font-size: 0.95em;
     color: #f4f4f9;
     background: #1f1f1f; /* Black footer background */
     border-top: 1px solid #4a3cc9; /* Purple footer border */
+    font-family: 'Roboto', sans-serif;
+    margin-top: auto; /* Pushes the footer to the bottom when content is short */
 }
 
 /* Logo Integration */
 header {
-    text-align: center;
+    display: flex; /* Enable flexbox layout */
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Center the content horizontally */
+    gap: 20px; /* Add space between the image and text */
     margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+header p {
+    font-family: 'Finger Paint', cursive; /* Ensure the desired font is applied */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+    color: rgb(83, 70, 199);
+    text-shadow: 
+    2px 2px 0 rgb(45, 35, 128),  /* Bottom right */
+    -1px -1px 0 rgb(84, 84, 84) /* Top left */
+}
+
+header p:hover {
+    transform: scale(1.05); /* Scale on hover */
+    color: #3f33b0;
+    text-shadow: 
+    2px 2px 0 rgb(36, 27, 115),  /* Bottom right */
+    -1px -1px 0 rgb(76, 76, 76) /* Top left */
+}
+
+header p:active {
+    transform: scale(0.97); /* Image zoom on hover */
+    color: rgb(54, 41, 172);
+    text-shadow: 
+    2px 2px 0 rgb(27, 19, 97),  /* Bottom right */
+    -1px -1px 0 rgb(67, 67, 67) /* Top left */
+}
+
+header h1 {
+    font-family: 'Finger Paint', cursive;
+    font-size: 2.5rem;
+    color: #ff914d;
+    margin: 0; /* Remove default margin */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+    text-shadow: 
+    2px 2px 0 #ffffff,  /* Bottom right */
+    -2px 2px 0 #ffffff, /* Bottom left */
+    2px -2px 0 #ffffff, /* Top right */
+    -2px -2px 0 #ffffff; /* Top left */
+}
+
+header h1:hover {
+    transform: scale(1.03); /* Scale on hover */
+    color: #dd7230;
+    text-shadow: 
+    2px 2px 0 #e2e2e2,  /* Bottom right */
+    -2px 2px 0 #e2e2e2, /* Bottom left */
+    2px -2px 0 #e2e2e2, /* Top right */
+    -2px -2px 0 #e2e2e2; /* Top left */
+}
+
+header h1:active {
+    transform: scale(0.97); /* Image zoom on hover */
+    color: #c96323;
+    text-shadow: 
+    2px 2px 0 #cacaca,  /* Bottom right */
+    -2px 2px 0 #cacaca, /* Bottom left */
+    2px -2px 0 #cacaca, /* Top right */
+    -2px -2px 0 #cacaca; /* Top left */
 }
 
 header img {
-    max-width: 220px; /* Make the logo larger */
+    max-width: 120px; /* Adjust the image size */
     height: auto;
     display: block;
-    margin: 0 auto 10px;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+}
+
+header img:hover {
+    transform: scale(1.05); /* Scale on hover */
+}
+
+header img:active {
+    transform: scale(0.97); /* Image zoom on hover */
+}
+
+nav {
+    background: rgb(83, 70, 199);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    padding: 10px;
+    width: 90%;
+    max-width: 1100px;
+    transition: background 0.3s ease, transform 0.3s ease; /* Transition for nav */
+}
+
+nav:hover {
+    background: rgb(102, 102, 231);
+    transform: scale(1.05); /* Scale up when hovered */
+}
+
+/* Styles for the unordered list */
+nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Flexbox for horizontal layout */
+    padding: 0; /* Remove default padding */
+    gap: 20px; /* Space between items */
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Styles for list items */
+nav ul li {
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: transform 0.2s ease; /* Smooth transition for scaling */
+}
+
+nav ul li:hover {
+    transform: scale(1.05); /* Scale up the entire list item */
+}
+
+nav ul li:active {
+    transform: scale(0.95); /* Further squish on click */
+}
+
+/* Styles for anchor tags within list items */
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #ffffff; /* Text color */
+    padding: 10px 15px; /* Add padding for clickable area */
+    border-radius: 10px; /* Rounded corners */
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition for color and background */
+}
+
+nav ul li a:hover {
+    color: #d5f0ff; /* Change text color on hover */
+    background-color: rgb(80, 80, 241); /* Optional: Add background color on hover */
+    transform: scale(1.1); /* Scale up on hover */
 }

@@ -1,64 +1,369 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Colors United Painting</title>
-        <link rel="stylesheet" href="styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
-    </head>    
-    <style>
-        .container {
-            text-align: center; /* Center-align text inside the container */
-        }
-        ul {
-            font-size: 20px; /* Adjust the size of the text */
-        }
-        li {
-            margin: 5px 0; /* Adds vertical spacing between items */
-            padding: 0; /* Removes extra padding */
-            text-align: left; /* Ensures consistent text alignment for longer text */
-        }
-    </style>
-<body>
-    <header>
-        <!-- Logo -->
-        <a href="/index.html"><img src="./images/ColorsUnitedPaintingLogo.png" alt="Colors United Painting Logo"></a>
-        <a href="/index.html"><h1>Colors United Painting</h1></a>
-        <a href="/index.html"><strong><p>Let us turn your house into a home</p></strong></a>
-    </header>
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Finger+Paint&family=Raleway:wght@400;700&display=swap');
 
-    <nav>
-        <ul>
-          <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
-          <li><a href="AboutUs.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
-          <li><a href="Testimonials.html"><i class="fa-solid fa-comment"></i> Testimonials</a></li>
-          <li><a href="Gallery.html"><i class="fa-solid fa-camera"></i> Gallery</a></li>
-          <li><a href="ContactInfo.html"><i class="fa-solid fa-envelope"></i> Contact Info</a></li>
-        </ul>
-      </nav>
+/* General styles for the entire page */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    color: #1a1313; /* Set text color to black */
+    background: linear-gradient(135deg, #e85752 25%, #f86762 25%, #f86762 50%, #e85752 50%, #e85752 75%, #f86762 75%);
+    background-size: 40px 40px; /* Controls the size of the stripes */
+    animation: move-stripes 6s linear infinite, fadeInBackground 1s ease-in-out; /* Adds the animation */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    display: flex;
+    flex-direction: column; /* Makes the body a flex container */
+    min-height: 100vh; /* Ensures the body takes up the full height of the viewport */
+}
 
-      <div class="container">
-        <h2>Services We Provide</h2>
-        <ul>
-            <li><strong>Interior and Exterior Priming and Painting</strong></li>
-            <li><strong>Paint Color and Interior Decorating Consultation</strong></li>
-            <li><strong>Drywall Installation</strong></li>
-            <li><strong>Wallpaper Removal and Installation</strong></li>
-            <li><strong>Window and Door Installation</strong></li>
-            <li><strong>Framing</strong></li>
-            <li><strong>Floor Removal and Installation</strong></li>
-            <li><strong>Epoxy Floor Coatings</strong></li>
-            <li><strong>Power Washing</strong></li>
-            <li><strong>Deck and Fence Staining</strong></li>
-            <li><strong>Handyman Services</strong></li>
-        </ul>
-    </div>
-    
+/* Keyframes for moving the background */
+@keyframes move-stripes {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 40px 40px; /* Moves the stripes diagonally */
+    }
+}
 
-    <footer>
-        <p>&copy; 2024 Colors United Painting. All Rights Reserved.</p>
-    </footer>
-    <script src="https://kit.fontawesome.com/e3411fc0d6.js" crossorigin="anonymous"></script>
-</body>
-</html>
+/* Fade-in background keyframes */
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0.75;
+        background-color: #b43c38;
+    }
+    100% {
+        opacity: 1;
+        background-color: #b43c38;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Container for main content */
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Allows the content to expand and fill the available space */
+}
+
+.container {
+    width: 75%;
+    margin: 20px auto;
+    padding: 30px;
+    flex: 1;
+    background: rgb(251, 179, 179);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    border: 5px solid #6659da; /* Black border */
+    transition: transform 0.4s ease; /* Smooth hover animation */
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Header styles */
+h1 {
+    font-family: 'Finger Paint', cursive;
+    font-size: 2.5rem;
+    color: #ff914d; /* Fill color */
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+h1 + p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #4a3cc9; /* Add purple accent for tagline */
+    text-align: center;
+    margin-top: -10px;
+}
+
+h2, h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.8rem;
+    color: #1f1f1f; /* Black for headings */
+    margin-bottom: 15px;
+}
+
+/* Section styling */
+section {
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 2px solid #4a3cc9; /* Purple border from the logo */
+    color: #1a1313; /* Set text color to black */
+}
+
+section p {
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Testimonials styling */
+blockquote {
+    font-style: italic;
+    margin: 20px 0;
+    padding: 15px 25px;
+    background: #f9e3e2; /* Light orange background for testimonials */
+    border-left: 6px solid #e85752; /* Orange accent line */
+    border-radius: 8px;
+    color: #4a3cc9; /* Purple text */
+    font-family: 'Raleway', sans-serif;
+    color: #1a1313; /* Set text color to black */
+}
+
+blockquote p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+blockquote footer {
+    text-align: right;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #4a3cc9; /* Purple text for footer */
+    background: #ffdab9; /* Light peach background for footer */
+    padding: 10px;
+    border-radius: 6px;
+    display: inline-block; /* Ensure the background is only around the text */
+    margin-top: 10px;
+}
+/* Contact Info styling */
+.contact-info {
+    list-style: none;
+    padding: 0;
+    line-height: 2;
+    font-size: 1.1rem;
+    color: #1f1f1f; /* Black text */
+    font-family: 'Raleway', sans-serif;
+}
+
+.contact-info li {
+    margin: 8px 0;
+    max-width: 500px;
+    margin-right: 25px;
+    margin-left: 15px;
+}
+
+.contact-info img {
+    max-width: 100%; /* Ensures the image doesn't exceed the container's width */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 25px; /* Rounded corners */
+    border: 5px solid #4d3ed2; /* Solid border with custom color */
+    margin-bottom: 20px; /* Space between images */
+}
+
+.contact-info a {
+    color: #e85752; /* Default color */
+    font-weight: 500; /* Medium font weight */
+    display: inline-block; /* Allows transform to apply */
+    transition: transform 0.4s ease, color 0.4s ease; /* Smooth hover animation */
+}
+
+.contact-info a:hover {
+    color: #4a3cc9; /* New color on hover */
+    transform: scale(1.02); /* Scale up on hover */
+}
+
+.contact-info a:active {
+    transform: scale(0.98); /* Slightly scale down when clicked */
+}
+
+/* Additional styling for container to ensure spacing */
+.container {
+    padding: 20px;
+    text-align: center; /* Center-aligns the gallery */
+}
+
+
+/* Key Differentiators and Services styling */
+ul {
+    list-style-type: disc; /* Sets the bullet points to solid dots */
+    list-style-position: outside; /* Ensures bullets are outside the text */
+    margin: 0 auto; /* Centers the list */
+    padding: 0; /* Removes extra padding from the list */
+    display: inline-block; /* Ensures the list is treated as a block for centering */
+    text-align: left; /* Aligns text to the left within the centered block */
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 25px;
+    font-size: 0.95em;
+    color: #f4f4f9;
+    background: #1f1f1f; /* Black footer background */
+    border-top: 1px solid #4a3cc9; /* Purple footer border */
+    font-family: 'Roboto', sans-serif;
+    margin-top: auto; /* Pushes the footer to the bottom when content is short */
+}
+
+/* Logo Integration */
+header {
+    display: flex; /* Enable flexbox layout */
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Center the content horizontally */
+    gap: 20px; /* Add space between the image and text */
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgba(164, 44, 40, 0.5); /* Black background with 20% opacity */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease; /* Smooth hover animation */
+}
+
+header:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+
+header p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+    color: rgb(83, 70, 199);
+    text-shadow: 
+    1px 1px 0 rgb(45, 35, 128),  /* Bottom right */
+    -1px -1px 0 rgb(84, 84, 84) /* Top left */
+}
+
+header p:hover {
+    transform: scale(1.05); /* Scale on hover */
+    color: #3f33b0;
+    text-shadow: 
+    0.5px 0.5px 0 rgb(36, 27, 115),  /* Bottom right */
+    -1px -1px 0 rgb(76, 76, 76) /* Top left */
+}
+
+header p:active {
+    transform: scale(0.97); /* Image zoom on hover */
+    color: rgb(54, 41, 172);
+    text-shadow: 
+    2px 2px 0 rgb(27, 19, 97),  /* Bottom right */
+    -1px -1px 0 rgb(67, 67, 67) /* Top left */
+}
+
+header h1 {
+    font-family: 'Finger Paint', cursive;
+    font-size: 2.5rem;
+    color: #ab2e29;
+    margin: 0; /* Remove default margin */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+    text-shadow: 
+    2px 2px 0 #ffffff,  /* Bottom right */
+    -2px 2px 0 #ffffff, /* Bottom left */
+    2px -2px 0 #ffffff, /* Top right */
+    -2px -2px 0 #ffffff; /* Top left */
+}
+
+header h1:hover {
+    transform: scale(1.03); /* Scale on hover */
+    color: #9b231f;
+    text-shadow: 
+    2px 2px 0 #e2e2e2,  /* Bottom right */
+    -2px 2px 0 #e2e2e2, /* Bottom left */
+    2px -2px 0 #e2e2e2, /* Top right */
+    -2px -2px 0 #e2e2e2; /* Top left */
+}
+
+header h1:active {
+    transform: scale(0.97); /* Image zoom on hover */
+    color: #8e1b17;
+    text-shadow: 
+    2px 2px 0 #cacaca,  /* Bottom right */
+    -2px 2px 0 #cacaca, /* Bottom left */
+    2px -2px 0 #cacaca, /* Top right */
+    -2px -2px 0 #cacaca; /* Top left */
+}
+
+header img {
+    max-width: 170px; /* Adjust the image size */
+    height: auto;
+    display: block;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+    border: 3px solid #4d3ed2; /* Black border */
+}
+
+header img:hover {
+    transform: scale(1.05); /* Scale on hover */
+}
+
+header img:active {
+    transform: scale(0.97); /* Image zoom on hover */
+}
+
+nav {
+    background: rgb(83, 70, 199);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    padding: 10px;
+    width: 90%;
+    max-width: 1100px;
+    font-size: 20px; /* Adjust the size of the text */
+    transition: 0.3s ease, transform 0.3s ease; /* Transition for nav */
+}
+
+nav:hover {
+    background: rgb(102, 102, 231);
+    transform: scale(1.05); /* Scale up when hovered */
+}
+
+/* Styles for the unordered list */
+nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Flexbox for horizontal layout */
+    padding: 0; /* Remove default padding */
+    gap: 20px; /* Space between items */
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px; /* Adjust the size of the text */
+}
+
+/* Styles for list items */
+nav ul li {
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: transform 0.2s ease; /* Smooth transition for scaling */
+}
+
+nav ul li:hover {
+    transform: scale(1.05); /* Scale up the entire list item */
+}
+
+nav ul li:active {
+    transform: scale(0.95); /* Further squish on click */
+}
+
+/* Styles for anchor tags within list items */
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #ffffff; /* Text color */
+    padding: 10px 15px; /* Add padding for clickable area */
+    border-radius: 10px; /* Rounded corners */
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition for color and background */
+}
+
+nav ul li a:hover {
+    color: #d5f0ff; /* Change text color on hover */
+    background-color: rgb(80, 80, 241); /* Optional: Add background color on hover */
+    transform: scale(1.1); /* Scale up on hover */
+}

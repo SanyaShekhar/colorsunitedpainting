@@ -7,8 +7,8 @@ body {
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    color: #000000; /* Set text color to black */
-    background: linear-gradient(135deg, #4b4b4b 25%, #535353 25%, #535353 50%, #4b4b4b 50%, #4b4b4b 75%, #535353 75%);
+    color: #1a1313; /* Set text color to black */
+    background: linear-gradient(135deg, #e85752 25%, #f86762 25%, #f86762 50%, #e85752 50%, #e85752 75%, #f86762 75%);
     background-size: 40px 40px; /* Controls the size of the stripes */
     animation: move-stripes 6s linear infinite; /* Adds the animation */
     scroll-behavior: smooth; /* Smooth scrolling */
@@ -27,8 +27,6 @@ body {
     }
 }
 
-
-/* Smooth scrolling for anchor links */
 a {
     text-decoration: none;
 }
@@ -46,11 +44,10 @@ a {
     margin: 20px auto;
     padding: 30px;
     flex: 1;
-    background: rgb(231,231,231);
-    background: linear-gradient(180deg, rgba(231,231,231,1) 0%, rgb(187, 187, 187) 50%, rgba(231,231,231,1) 100%);
+    background: rgb(251, 179, 179);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
-    border: 1px solid #1f1f1f; /* Black border */
+    border-radius: 50px;
+    border: 5px solid #6659da; /* Black border */
     transition: transform 0.4s ease; /* Smooth hover animation */
 }
 
@@ -91,6 +88,11 @@ section {
     margin-bottom: 40px;
     padding: 20px 0;
     border-bottom: 2px solid #4a3cc9; /* Purple border from the logo */
+    color: #1a1313; /* Set text color to black */
+}
+
+section p {
+    font-family: 'Raleway', sans-serif;
 }
 
 /* Testimonials styling */
@@ -98,11 +100,12 @@ blockquote {
     font-style: italic;
     margin: 20px 0;
     padding: 15px 25px;
-    background: #ffebd5; /* Light orange background for testimonials */
-    border-left: 6px solid #ff914d; /* Orange accent line */
+    background: #f9e3e2; /* Light orange background for testimonials */
+    border-left: 6px solid #e85752; /* Orange accent line */
     border-radius: 8px;
     color: #4a3cc9; /* Purple text */
     font-family: 'Raleway', sans-serif;
+    color: #1a1313; /* Set text color to black */
 }
 
 blockquote p {
@@ -137,23 +140,30 @@ blockquote footer {
 }
 
 .contact-info a {
-    color: #ff914d;
-    text-decoration: none;
-    font-weight: 500;
+    color: #e85752; /* Default color */
+    font-weight: 500; /* Medium font weight */
+    display: inline-block; /* Allows transform to apply */
+    transition: transform 0.4s ease, color 0.4s ease; /* Smooth hover animation */
 }
 
 .contact-info a:hover {
-    text-decoration: underline;
-    color: #4a3cc9;
+    color: #4a3cc9; /* New color on hover */
+    transform: scale(1.02); /* Scale up on hover */
 }
+
+.contact-info a:active {
+    transform: scale(0.98); /* Slightly scale down when clicked */
+}
+
 
 /* Key Differentiators and Services styling */
 ul {
-    list-style-type: circle;
-    margin-left: 25px;
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #1f1f1f;
+    list-style-type: disc; /* Sets the bullet points to solid dots */
+    list-style-position: outside; /* Ensures bullets are outside the text */
+    margin: 0 auto; /* Centers the list */
+    padding: 0; /* Removes extra padding from the list */
+    display: inline-block; /* Ensures the list is treated as a block for centering */
+    text-align: left; /* Aligns text to the left within the centered block */
     font-family: 'Raleway', sans-serif;
 }
 
@@ -177,14 +187,30 @@ header {
     gap: 20px; /* Add space between the image and text */
     margin-bottom: 20px;
     margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgba(164, 44, 40, 0.5); /* Black background with 20% opacity */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease; /* Smooth hover animation */
 }
 
+header:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+
 header p {
-    font-family: 'Finger Paint', cursive; /* Ensure the desired font is applied */
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
     transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
     color: rgb(83, 70, 199);
     text-shadow: 
-    2px 2px 0 rgb(45, 35, 128),  /* Bottom right */
+    1px 1px 0 rgb(45, 35, 128),  /* Bottom right */
     -1px -1px 0 rgb(84, 84, 84) /* Top left */
 }
 
@@ -192,7 +218,7 @@ header p:hover {
     transform: scale(1.05); /* Scale on hover */
     color: #3f33b0;
     text-shadow: 
-    2px 2px 0 rgb(36, 27, 115),  /* Bottom right */
+    0.5px 0.5px 0 rgb(36, 27, 115),  /* Bottom right */
     -1px -1px 0 rgb(76, 76, 76) /* Top left */
 }
 
@@ -207,7 +233,7 @@ header p:active {
 header h1 {
     font-family: 'Finger Paint', cursive;
     font-size: 2.5rem;
-    color: #ff914d;
+    color: #ab2e29;
     margin: 0; /* Remove default margin */
     transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
     text-shadow: 
@@ -219,7 +245,7 @@ header h1 {
 
 header h1:hover {
     transform: scale(1.03); /* Scale on hover */
-    color: #dd7230;
+    color: #9b231f;
     text-shadow: 
     2px 2px 0 #e2e2e2,  /* Bottom right */
     -2px 2px 0 #e2e2e2, /* Bottom left */
@@ -229,7 +255,7 @@ header h1:hover {
 
 header h1:active {
     transform: scale(0.97); /* Image zoom on hover */
-    color: #c96323;
+    color: #8e1b17;
     text-shadow: 
     2px 2px 0 #cacaca,  /* Bottom right */
     -2px 2px 0 #cacaca, /* Bottom left */
@@ -238,11 +264,12 @@ header h1:active {
 }
 
 header img {
-    max-width: 120px; /* Adjust the image size */
+    max-width: 170px; /* Adjust the image size */
     height: auto;
     display: block;
-    border-radius: 15px;
+    border-radius: 25px;
     transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+    border: 3px solid #4d3ed2; /* Black border */
 }
 
 header img:hover {
@@ -264,7 +291,8 @@ nav {
     padding: 10px;
     width: 90%;
     max-width: 1100px;
-    transition: background 0.3s ease, transform 0.3s ease; /* Transition for nav */
+    font-size: 20px; /* Adjust the size of the text */
+    transition: 0.3s ease, transform 0.3s ease; /* Transition for nav */
 }
 
 nav:hover {
@@ -279,6 +307,7 @@ nav ul {
     padding: 0; /* Remove default padding */
     gap: 20px; /* Space between items */
     font-family: 'Raleway', sans-serif;
+    font-size: 20px; /* Adjust the size of the text */
 }
 
 /* Styles for list items */
